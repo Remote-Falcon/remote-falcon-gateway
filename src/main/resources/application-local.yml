@@ -8,9 +8,3 @@ services:
   plugins-api:
     path: remote-falcon-plugins-api
     uri: http://localhost:8083/remote-falcon-plugins-api
-
-logging:
-  level:
-    org.springframework.web.HttpLogging: TRACE
-    reactor.netty.http.server: DEBUG
-    reactor.netty.http.client: DEBUG
