@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/Remote-Falcon/remote-falcon-gateway/compare/v1.0.1...v1.0.2) (2024-05-03)
+
+
+### Bug Fixes
+
+* Maven plugin ([81cd35a](https://github.com/Remote-Falcon/remote-falcon-gateway/commit/81cd35ac55e147da11499a7029dac5f8ee918a1e))
+
 ## [1.0.1](https://github.com/Remote-Falcon/remote-falcon-gateway/compare/v1.0.0...v1.0.1) (2024-05-03)
 
 
