@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/Remote-Falcon/remote-falcon-gateway/compare/v1.0.2...v1.0.3) (2024-05-03)
+
+
+### Bug Fixes
+
+* Trigger ([e76c257](https://github.com/Remote-Falcon/remote-falcon-gateway/commit/e76c25782503b2234bf295c8f7314ce76855cedc))
+
 ## [1.0.2](https://github.com/Remote-Falcon/remote-falcon-gateway/compare/v1.0.1...v1.0.2) (2024-05-03)
 
 
