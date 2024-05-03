@@ -1,5 +1,8 @@
 context-path: remote-falcon-gateway
 
+server:
+  port: 8080
+
 spring:
   application:
     name: remote-falcon-gateway
