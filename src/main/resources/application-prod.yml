@@ -5,3 +5,6 @@ services:
   viewer:
     path: remote-falcon-viewer
     uri: https://remotefalcon.com/remote-falcon-viewer
+  plugins-api:
+    path: remote-falcon-plugins-api
+    uri: https://remotefalcon.com/remote-falcon-plugins-api
