@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.4](https://github.com/Remote-Falcon/remote-falcon-gateway/compare/v1.0.3...v1.0.4) (2024-05-03)
+
+
+### Bug Fixes
+
+* Local manifest ([e386a34](https://github.com/Remote-Falcon/remote-falcon-gateway/commit/e386a34746649621596b3fda72a12e2451679134))
+
 ## [1.0.3](https://github.com/Remote-Falcon/remote-falcon-gateway/compare/v1.0.2...v1.0.3) (2024-05-03)
 
 
