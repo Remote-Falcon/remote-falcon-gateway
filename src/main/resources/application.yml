@@ -1,0 +1,47 @@
+context-path: remote-falcon-gateway
+
+spring:
+  application:
+    name: remote-falcon-gateway
+  cloud:
+    gateway:
+      globalcors:
+        add-to-simple-url-handler-mapping: true
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin, RETAIN_FIRST
+      routes:
+        - id: control_panel_path
+          uri: ${services.control-panel.uri}
+          predicates:
+            - Path=/${context-path}/**
+            - Header=Route, Control-Panel
+          filters:
+            - MapRequestHeader=Control-Panel
+            - RewritePath=/${context-path}/(?<segment>.*),/${services.control-panel.path}/$\{segment}
+        - id: viewer_path
+          uri: ${services.viewer.uri}
+          predicates:
+            - Path=/${context-path}/**
+            - Header=Route, Viewer
+          filters:
+            - MapRequestHeader=Viewer
+            - RewritePath=/${context-path}/(?<segment>.*),/${services.viewer.path}/$\{segment}
+        - id: plugins_api_path
+          uri: ${services.plugins-api.uri}
+          predicates:
+            - Path=/${context-path}/**
+            - Header=Route, Plugins-API
+          filters:
+            - MapRequestHeader=Plugins-API
+            - RewritePath=/${context-path}/(?<segment>.*),/${services.plugins-api.path}/$\{segment}
+        - id: plugins_api_legacy_path
+          uri: ${services.plugins-api.uri}
+          predicates:
+            - Path=/remotefalcon/api/**
+          filters:
+            - RewritePath=/remotefalcon/api/(?<segment>.*),/${services.plugins-api.path}/$\{segment}

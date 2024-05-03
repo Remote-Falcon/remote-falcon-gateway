@@ -1,2 +1,1 @@
-# remote-falcon-gateway
-Remote Falcon API Gateway
+# Remote Falcon API Gateway
