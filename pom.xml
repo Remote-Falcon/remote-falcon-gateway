@@ -11,8 +11,8 @@
 	<groupId>com.remotefalcon</groupId>
 	<artifactId>remote-falcon-gateway</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>remote-falcon-gateway-init</name>
-	<description>remote-falcon-gateway-init</description>
+	<name>remote-falcon-gateway</name>
+	<description>remote-falcon-gateway</description>
 	<properties>
 		<java.version>17</java.version>
 		<spring-cloud.version>2023.0.1</spring-cloud.version>
@@ -50,10 +50,42 @@
 	</dependencyManagement>
 
 	<build>
+		<finalName>${project.artifactId}</finalName>
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>3.3.0</version>
+				<executions>
+					<execution>
+						<id>copy</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<artifactItems>
+						<artifactItem>
+							<groupId>com.datadoghq</groupId>
+							<artifactId>dd-java-agent</artifactId>
+							<version>0.101.0</version>
+							<type>jar</type>
+							<overWrite>false</overWrite>
+							<outputDirectory>${project.build.directory}/dd-java-agent</outputDirectory>
+							<destFileName>dd-java-agent.jar</destFileName>
+						</artifactItem>
+					</artifactItems>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
