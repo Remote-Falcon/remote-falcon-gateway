@@ -5,21 +5,22 @@
 	<groupId>com.remotefalcon</groupId>
 	<artifactId>remote-falcon-gateway</artifactId>
 	<version>1.0.0</version>
-	<packaging>jar</packaging>
 	<name>remote-falcon-gateway</name>
+	<packaging>jar</packaging>
+	<description>remote-falcon-gateway</description>
 
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>17</java.version>
+		<spring-cloud.version>2023.0.1</spring-cloud.version>
 	</properties>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.1.0</version>
-		<relativePath/>
+		<version>3.2.5</version>
+		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -45,7 +46,7 @@
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>2020.0.5</version>
+				<version>${spring-cloud.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>

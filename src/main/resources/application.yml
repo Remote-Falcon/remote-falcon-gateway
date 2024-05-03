@@ -1,11 +1,5 @@
 context-path: remote-falcon-gateway
 
-logging:
-  level:
-    org.springframework.web.HttpLogging: TRACE
-    reactor.netty.http.server: DEBUG
-    reactor.netty.http.client: DEBUG
-    
 server:
   port: 8080
 
