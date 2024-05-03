@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.5](https://github.com/Remote-Falcon/remote-falcon-gateway/compare/v1.0.4...v1.0.5) (2024-05-03)
+
+
+### Bug Fixes
+
+* Pom updates ([4192b57](https://github.com/Remote-Falcon/remote-falcon-gateway/commit/4192b57bace29895ff5833de1e0ecac6541d518c))
+
 ## [1.0.4](https://github.com/Remote-Falcon/remote-falcon-gateway/compare/v1.0.3...v1.0.4) (2024-05-03)
 
 
