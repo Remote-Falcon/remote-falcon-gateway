@@ -1,6 +1,8 @@
 name: Manual Build and Release
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - 'main'
 
 permissions:
   contents: write
