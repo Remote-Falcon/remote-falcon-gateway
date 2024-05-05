@@ -34,17 +34,3 @@ spring:
           filters:
             - MapRequestHeader=Viewer
             - RewritePath=/${context-path}/(?<segment>.*),/${services.viewer.path}/$\{segment}
-        - id: plugins_api_path
-          uri: ${services.plugins-api.uri}
-          predicates:
-            - Path=/${context-path}/**
-            - Header=Route, Plugins-API
-          filters:
-            - MapRequestHeader=Plugins-API
-            - RewritePath=/${context-path}/(?<segment>.*),/${services.plugins-api.path}/$\{segment}
-        - id: plugins_api_legacy_path
-          uri: ${services.plugins-api.uri}
-          predicates:
-            - Path=/remotefalcon/api/**
-          filters:
-            - RewritePath=/remotefalcon/api/(?<segment>.*),/${services.plugins-api.path}/$\{segment}
