@@ -104,7 +104,7 @@ spec:
     http:
       paths:
       - pathType: Prefix
-        path: /
+        path: /remote-falcon-gateway
         backend:
           service:
             name: #{Application}#
