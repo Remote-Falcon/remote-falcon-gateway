@@ -1,3 +1,20 @@
+logging:
+  level:
+    reactor:
+      netty: INFO
+    org:
+      springframework:
+        cloud:
+          gateway: TRACE
+
+spring:
+  cloud:
+    gateway:
+      httpclient:
+        wiretap: true
+      httpserver:
+        wiretap: true
+
 services:
   control-panel:
     path: remote-falcon-control-panel
