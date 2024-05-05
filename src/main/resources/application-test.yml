@@ -22,6 +22,3 @@ services:
   viewer:
     path: remote-falcon-viewer
     uri: https://remotefalcon.dev/remote-falcon-viewer
-  plugins-api:
-    path: remote-falcon-plugins-api
-    uri: https://remotefalcon.dev/remote-falcon-plugins-api
