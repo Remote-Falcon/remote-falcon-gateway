@@ -1,5 +1,6 @@
 name: Build and Release
 on:
+  workflow_dispatch:
   push:
     branches:
       - 'main'
@@ -103,9 +104,9 @@ jobs:
           Replicas: 2
           Image: ${{ env.REGISTRY }}/${{ steps.repository_string.outputs.lowercase }}:${{ github.sha }}
           Requests.Memory: 1000Mi
-          Requests.CPU: 500m
+          Requests.CPU: 750m
           Limits.Memory: 1250Mi
-          Limits.CPU: 750m
+          Limits.CPU: 1000m
           Host: remotefalcon.com
 
       - name: Install doctl
