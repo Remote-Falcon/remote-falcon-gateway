@@ -1,3 +1,10 @@
+sentry:
+  dsn: https://07468c33a1d131407b95509f60e1f4cf@o4507426806300672.ingest.us.sentry.io/4507426936979456
+  # Set traces-sample-rate to 1.0 to capture 100% of transactions for performance monitoring.
+  # We recommend adjusting this value in production.
+  traces-sample-rate: 1.0
+  environment: test
+
 logging:
   level:
     reactor:
