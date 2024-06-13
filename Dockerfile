@@ -1,10 +1,8 @@
-# The SENTRY_AUTH_TOKEN is used to upload the source maps to Sentry
-ARG SENTRY_AUTH_TOKEN
-ENV SENTRY_AUTH_TOKEN ${SENTRY_AUTH_TOKEN}
-
 FROM maven:3-openjdk-17-slim AS build
 COPY src /usr/src/app/src
 COPY pom.xml /usr/src/app
+ARG SENTRY_AUTH_TOKEN
+ENV SENTRY_AUTH_TOKEN ${SENTRY_AUTH_TOKEN}
 RUN mvn -f /usr/src/app/pom.xml clean package
 
 FROM openjdk:17-oracle
