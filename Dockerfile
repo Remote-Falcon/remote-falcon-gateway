@@ -5,8 +5,9 @@ RUN mvn -f /usr/src/app/pom.xml clean package
 
 FROM openjdk:17-oracle
 COPY --from=build /usr/src/app/target/remote-falcon-gateway.jar /usr/app/remote-falcon-gateway.jar
-COPY --from=build /usr/src/app/target/dd-java-agent/dd-java-agent.jar /usr/app/dd-java-agent.jar
 EXPOSE 8080
+
+ADD 'https://dtdg.co/latest-java-tracer' /usr/app/dd-java-agent.jar
 
 ARG DD_GIT_REPOSITORY_URL
 ARG DD_GIT_COMMIT_SHA
