@@ -86,7 +86,7 @@
 						<artifactItem>
 							<groupId>com.datadoghq</groupId>
 							<artifactId>dd-java-agent</artifactId>
-							<version>1.9.0</version>
+							<version>1.35.0</version>
 							<type>jar</type>
 							<overWrite>false</overWrite>
 							<outputDirectory>${project.build.directory}/dd-java-agent</outputDirectory>
