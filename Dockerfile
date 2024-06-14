@@ -19,4 +19,4 @@ RUN echo ${DD_GIT_COMMIT_SHA}
 
 ENTRYPOINT exec java $JAVA_OPTS -javaagent:/usr/app/dd-java-agent.jar -Ddd.logs.injection=true \
   -Ddd.service=remote-falcon-gateway -Ddd.profiling.enabled=true -XX:FlightRecorderOptions=stackdepth=256 \
-  -jar /usr/app/remote-falcon-gateway.jar
+  -Ddd.version=${DD_GIT_COMMIT_SHA} -jar /usr/app/remote-falcon-gateway.jar

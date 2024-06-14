@@ -63,6 +63,7 @@ jobs:
         env:
           Namespace: remote-falcon-test
           Application: remote-falcon-gateway
+          Version: ${{ github.sha }}
           Env: test
           Replicas: 1
           Image: ${{ env.REGISTRY }}/${{ steps.repository_string.outputs.lowercase }}:${{ github.sha }}
@@ -103,6 +104,7 @@ jobs:
         env:
           Namespace: remote-falcon
           Application: remote-falcon-gateway
+          Version: ${{ github.sha }}
           Env: prod
           Replicas: 2
           Image: ${{ env.REGISTRY }}/${{ steps.repository_string.outputs.lowercase }}:${{ github.sha }}
