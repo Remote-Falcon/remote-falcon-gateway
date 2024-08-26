@@ -34,3 +34,5 @@ spring:
           filters:
             - MapRequestHeader=Viewer
             - RewritePath=/${context-path}/(?<segment>.*),/${services.viewer.path}/$\{segment}
+      x-forwarded:
+        for-enabled: true
