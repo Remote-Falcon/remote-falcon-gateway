@@ -22,7 +22,7 @@ spring:
           uri: ${services.control-panel.uri}
           predicates:
             - Path=/${context-path}/**
-            - Header=Route, Control-Panel
+            - Header=Route, Control-Panel, CF-Connecting-IP, \d+
           filters:
             - MapRequestHeader=Control-Panel
             - RewritePath=/${context-path}/(?<segment>.*),/${services.control-panel.path}/$\{segment}
@@ -30,7 +30,7 @@ spring:
           uri: ${services.viewer.uri}
           predicates:
             - Path=/${context-path}/**
-            - Header=Route, Viewer
+            - Header=Route, Viewer, CF-Connecting-IP, \d+
           filters:
             - MapRequestHeader=Viewer
             - RewritePath=/${context-path}/(?<segment>.*),/${services.viewer.path}/$\{segment}
